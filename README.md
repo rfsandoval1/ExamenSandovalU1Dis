@@ -6,8 +6,8 @@ el servidor acepta dos clientes simultaneamente y distribuye los mensajes y el s
 ## Lo que se necesita
 
 - Docker Desktop instalado y ejecutandose.
-- Python 3.10 o superior para los clientes. En Windows se puede comprobar con `py --version`.
-- Dos terminales independientes de Visual Studio Code.
+- Python 3.10 para los clientes.
+- Dos terminales.
 
 ## 1. Iniciar el servidor en Docker
 
@@ -52,14 +52,14 @@ una entrada por el teclado.
 como deberia verse
 
 ```text
-[CLIENTE 1]: Hola a todos
-[CLIENTE 2]: Buenos dias
+[CLIENTE 1]: Hola
+[CLIENTE 2]: hola
 [SERVIDOR]: Mensaje recibido por todos
 ```
 
 ## Estructura
 
 - `servidor.py`: servidor TCP, limite de dos clientes, broadcast e hilo de entrada.
-- `cliente.py`: cliente con hilo receptor y envio simultaneo desde la terminal.
+- `cliente.py`: cliente con hilo receptor y envio desde la terminal.
 - `Dockerfile`: imagen del servidor Python.
-- `docker-compose.yml`: construccion y publicacion del puerto `5000`.
+- `docker-compose.yml`: construccion en el puerto `5000`.
